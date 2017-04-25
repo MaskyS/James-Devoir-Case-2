@@ -1,0 +1,145 @@
+// Ex 1-8 - Case
+
+//Ex 1
+
+input temp
+case temp of
+	0..10: output "Too cold" 
+	15..18: output "Cold"
+	24..28:	output "Good"
+	30..38: output "Hot"
+otherwise
+	output "Not valid" 
+endcase
+
+
+//Ex 2
+
+input name
+case name of   or name =  then
+	"KFC","MC DO": output "Fast Food"
+	"SAMSUNG", "CASH & CARRY": output "Electronics"
+	"TFP", "COURTS": output "Furniture"
+	"LEXPRESS", "DEFIMEDIA": output "News"
+otherwise 
+	output "Undefined"
+endcase
+
+
+//Ex 3
+
+input money
+amnt <= money/42.34
+case amnt of
+	0..10: output "One quarter tank"
+	11..18: output "Half tank"
+	19..28: output "Three quarter tank"
+otherwise 
+	if amnt > 28 then 
+		output "Full tank"
+	endif
+endcase
+
+
+//Ex 4 
+
+input team, season 
+case team of 
+	"Manchester": 	case season of 
+						1:  output 50 
+						2:  output 70 
+						3:	output 65
+						4:	output 80
+					endcase
+					
+	"Liverpool":	case season of 
+						1:  output 20 
+						2:  output 25 
+						3:	output 26
+						4:	output 22
+					endcase
+	
+	"Arsenal":	case season of 
+					1:  output 18 
+					2:  output 17 
+					3:	output 16
+					4:	output 15
+				endcase
+
+	"Chealsea": case season of 
+					1:  output 2
+					2:  output 3 
+					3:	output 4
+					4:	output 5
+				endcase
+endcase
+
+
+//Ex 5 
+
+input l1, l2, w1, w2
+diff <=l2*w2-l1*w1
+case diff of
+	0..100:	msg <= "ok"
+	101..150:	msg <= "Discuss"
+	151..200:	msg <= "Reconsider"
+otherwise
+	if diff > 200 then
+		msg <= "Reject"
+	endif
+endcase
+output (l1*w1), (l2*w2), msg
+								
+								
+//Ex 6
+
+input speed, name
+case of speed 
+	0..300:	case name of 
+				"toyota":	output "car 1"
+				"Honda":	output "car 2"
+				"Volvo":	output "car 3"
+			endcase
+
+	301..600: 
+			case name of 
+						"moris express":	output "train 1"
+						"Rodrigues train":	output "train 2"
+						"Mada train":	output "train 3"
+			endcase
+			
+	601..2000:
+			case name of 
+						"air moris":	output "plane 1"
+						"Air rodrigues":	output "plane 2"
+						"Air comores":	output "plane 3"
+			endcase
+endcase
+
+
+//Ex 7 
+
+input amnt 
+case amnt of
+	0..100000: 		tax <= amnt * 0.05
+	100001..300000:	tax <= amnt * 0.08
+	300001..700000: tax <= amnt * 0.12
+	700001..900000: tax <= amnt * 0.15
+otherwise
+	if amnt > 900000 then
+		tax <= amnt * 0.20	
+	endif
+endcase
+
+
+//Ex 8
+
+input name 
+case name of 
+	"Jumbo", "Shoprite":	output "Hypermarket"
+	"Food lover", "sea lovers":  output "Minimarket" 
+	"4banane", "3papaye":	output "Tabagie" 
+otherwise
+	output "Supermarket" 
+endcase
+
